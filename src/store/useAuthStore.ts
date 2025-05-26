@@ -7,6 +7,7 @@ type AuthState = {
   user: User | null;
   isLoading: boolean;
   error: string | null;
+  info?: string | null;
   session: any;
   signIn: (email: string, password: string) => Promise<void>;
   signUp: (email: string, password: string, username: string) => Promise<void>;
@@ -20,6 +21,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   user: null,
   isLoading: true,
   error: null,
+  info: null,
   session: null,
   
   signIn: async (email, password) => {
@@ -92,7 +94,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
   
   signUp: async (email, password, username) => {
-    set({ isLoading: true, error: null });
+    set({ isLoading: true, error: null, info: null });
     
     try {
       // First create the auth user with sign up
@@ -115,7 +117,8 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       if (authData.user.identities && authData.user.identities.length === 0) {
         set({
           isLoading: false,
-          error: 'Email confirmation required. Please check your email to verify your account before signing in.'
+          error: null,
+          info: 'Registration successful! Please check your email to confirm your account.'
         });
         return;
       }
@@ -157,8 +160,9 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       console.error("Signup error:", error);
       // Ensure we're signed out if anything fails
       await supabase.auth.signOut();
-      set({ 
-        error: error.message || 'Failed to sign up', 
+      set({
+        error: error.message || 'Failed to sign up',
+        info: null,
         isLoading: false,
         user: null,
         session: null
