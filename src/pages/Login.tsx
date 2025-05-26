@@ -72,14 +72,14 @@ const Login = () => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} noValidate>
+          <form onSubmit={handleSubmit} noValidate className="space-y-4">
             <div className="form-group">
               <label htmlFor="email" className="form-label">Email Address</label>
               <input
                 type="email"
                 id="email"
                 required
-                className={`input w-full ${touched.email && !email ? 'border-rose-500 dark:border-rose-500' : ''}`}
+                className={`input w-full text-base ${touched.email && !email ? 'border-rose-500 dark:border-rose-500' : ''}`}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 onBlur={() => setTouched(prev => ({ ...prev, email: true }))}
@@ -105,7 +105,7 @@ const Login = () => {
                 type="password"
                 id="password"
                 required
-                className={`input w-full ${touched.password && !password ? 'border-rose-500 dark:border-rose-500' : ''}`}
+                className={`input w-full text-base ${touched.password && !password ? 'border-rose-500 dark:border-rose-500' : ''}`}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 onBlur={() => setTouched(prev => ({ ...prev, password: true }))}

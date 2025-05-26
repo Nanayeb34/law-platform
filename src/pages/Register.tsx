@@ -77,14 +77,14 @@ const Register = () => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="form-group">
               <label htmlFor="email" className="form-label">Email Address</label>
               <input
                 type="email"
                 id="email"
                 required
-                className="input w-full"
+                className="input w-full text-base"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={isLoading}
@@ -97,7 +97,7 @@ const Register = () => {
                 type="text"
                 id="username"
                 required
-                className="input w-full"
+                className="input w-full text-base"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 disabled={isLoading}
@@ -110,7 +110,7 @@ const Register = () => {
                 type="password"
                 id="password"
                 required
-                className="input w-full"
+                className="input w-full text-base"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 disabled={isLoading}
@@ -123,7 +123,7 @@ const Register = () => {
                 type="password"
                 id="confirmPassword"
                 required
-                className="input w-full"
+                className="input w-full text-base"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 disabled={isLoading}

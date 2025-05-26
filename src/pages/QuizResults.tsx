@@ -99,7 +99,7 @@ const QuizResults = () => {
           </div>
         </div>
         
-        <div className="flex flex-col sm:flex-row gap-3 mt-6">
+        <div className="flex flex-col sm:flex-row gap-3 gap-y-4 mt-6">
           <Link to="/categories" className="btn btn-secondary flex-1">
             Study Another Topic
           </Link>

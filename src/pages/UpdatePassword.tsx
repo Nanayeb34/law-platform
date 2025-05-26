@@ -109,7 +109,7 @@ const UpdatePassword = () => {
               <p className="text-sm">You will be redirected to the login page in a few seconds...</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} noValidate>
+            <form onSubmit={handleSubmit} noValidate className="space-y-4">
               <div className="form-group">
                 <label htmlFor="password" className="form-label">New Password</label>
                 <div className="relative">
@@ -117,7 +117,7 @@ const UpdatePassword = () => {
                     type={showPassword ? "text" : "password"}
                     id="password"
                     required
-                    className={`input w-full pr-10 ${touched.password && (!password || password.length < 6) ? 'border-rose-500 dark:border-rose-500' : ''}`}
+                    className={`input w-full pr-10 text-base ${touched.password && (!password || password.length < 6) ? 'border-rose-500 dark:border-rose-500' : ''}`}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     onBlur={() => setTouched(prev => ({ ...prev, password: true }))}
@@ -147,7 +147,7 @@ const UpdatePassword = () => {
                     type={showPassword ? "text" : "password"}
                     id="confirmPassword"
                     required
-                    className={`input w-full pr-10 ${
+                    className={`input w-full pr-10 text-base ${
                       touched.confirmPassword && 
                       (!confirmPassword || (password !== confirmPassword && confirmPassword)) 
                         ? 'border-rose-500 dark:border-rose-500' 

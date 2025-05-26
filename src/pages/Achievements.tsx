@@ -83,7 +83,7 @@ const Achievements = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h2 className="text-2xl font-bold mb-4">{category} Achievements</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 gap-y-6">
                   {categoryAchievements.map((achievement) => (
                     <AchievementCard
                       key={achievement.id}

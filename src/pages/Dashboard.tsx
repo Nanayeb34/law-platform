@@ -91,7 +91,7 @@ const Dashboard = () => {
         className="mb-8"
       >
         <h2 className="text-2xl font-bold mb-4">Quick Actions</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-6">
           {renderActionCard(
             "Start Quiz",
             "Test your knowledge with a random quiz",
@@ -130,7 +130,7 @@ const Dashboard = () => {
             </Link>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-6">
             {isLoading ? (
               Array(3).fill(0).map((_, i) => (
                 <div key={i} className="card p-6 animate-pulse">

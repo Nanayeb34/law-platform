@@ -160,7 +160,7 @@ const Categories = () => {
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-6">
             {categories.map((category, index) => (
               <div key={category.id} onClick={() => handleCategorySelect(category.id)}>
                 <CategoryCard category={category} index={index} />

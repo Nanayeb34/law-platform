@@ -118,7 +118,7 @@ const Profile = () => {
             className="mb-8"
           >
             <h2 className="text-2xl font-bold mb-4">Your Stats</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 gap-y-6">
               <div className="card p-6">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-12 h-12 rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 flex items-center justify-center mb-3">

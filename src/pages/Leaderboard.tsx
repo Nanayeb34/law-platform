@@ -66,7 +66,7 @@ const Leaderboard = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mb-8"
             >
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-6">
                 {/* Map only the top 3 users with special styling */}
                 {topThree.map((entry, index) => (
                   <motion.div

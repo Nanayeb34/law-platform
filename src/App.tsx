@@ -40,7 +40,11 @@ function App() {
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/update-password" element={<UpdatePassword />} />
             
-            <Route path="/" element={<ProgramSelect />} />
+            <Route path="/" element={
+              <ProtectedRoute>
+                <ProgramSelect />
+              </ProtectedRoute>
+            } />
             
             <Route path="/law" element={
               <ProtectedRoute>
