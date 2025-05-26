@@ -15,6 +15,7 @@ import ResetPassword from './pages/ResetPassword';
 import UpdatePassword from './pages/UpdatePassword';
 import ProtectedRoute from './components/ProtectedRoute';
 import LoadingScreen from './components/LoadingScreen';
+import ProgramSelect from './pages/ProgramSelect';
 import './index.css';
 
 function App() {
@@ -39,7 +40,9 @@ function App() {
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/update-password" element={<UpdatePassword />} />
             
-            <Route path="/" element={
+            <Route path="/" element={<ProgramSelect />} />
+            
+            <Route path="/law" element={
               <ProtectedRoute>
                 <Dashboard />
               </ProtectedRoute>
