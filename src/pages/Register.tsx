@@ -4,7 +4,7 @@ import { useAuthStore } from '../store/useAuthStore';
 import { motion } from 'framer-motion';
 
 const Register = () => {
-  const { user, signUp, error, isLoading } = useAuthStore();
+  const { user, signUp, error, isLoading, info } = useAuthStore();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -14,17 +14,15 @@ const Register = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setFormError(null);
-    
+    if (info) useAuthStore.setState({ info: null });
     if (password !== confirmPassword) {
       setFormError("Passwords don't match");
       return;
     }
-    
     if (password.length < 6) {
       setFormError("Password must be at least 6 characters");
       return;
     }
-    
     await signUp(email, password, username);
   };
 
@@ -63,11 +61,17 @@ const Register = () => {
                 />
               </svg>
             </motion.div>
-            <h1 className="text-2xl font-bold">Join LawLearn</h1>
+            <h1 className="text-2xl font-bold">Join Study Portal</h1>
             <p className="text-slate-600 dark:text-slate-400">Create an account to start your learning journey</p>
           </div>
 
-          {(error || formError) && (
+          {info && (
+            <div className="bg-green-100 border border-green-200 text-green-800 px-4 py-3 rounded-lg mb-6 dark:bg-green-900/30 dark:border-green-800 dark:text-green-300">
+              {info}
+            </div>
+          )}
+
+          {(error || formError) && !info && (
             <div className="bg-rose-100 border border-rose-200 text-rose-800 px-4 py-3 rounded-lg mb-6 dark:bg-rose-900/30 dark:border-rose-800 dark:text-rose-300">
               {formError || error}
             </div>
@@ -138,7 +142,7 @@ const Register = () => {
           <div className="mt-6 text-center text-sm text-slate-600 dark:text-slate-400">
             Already have an account?{' '}
             <Link to="/login" className="text-blue-600 hover:underline dark:text-blue-400">
-              Sign in
+              Sign in to Study Portal
             </Link>
           </div>
         </div>
