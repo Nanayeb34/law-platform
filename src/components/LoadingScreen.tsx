@@ -27,7 +27,7 @@ const LoadingScreen = () => {
         animate={{ opacity: [0.5, 1, 0.5] }}
         transition={{ duration: 1.5, repeat: Infinity }}
       >
-        Loading LawLearn...
+        Loading Study Portal...
       </motion.h3>
     </div>
   );
