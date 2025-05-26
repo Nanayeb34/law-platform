@@ -58,7 +58,7 @@ const Login = () => {
                 />
               </svg>
             </motion.div>
-            <h1 className="text-2xl font-bold">Welcome to LawLearn</h1>
+            <h1 className="text-2xl font-bold">Welcome to Study Portal</h1>
             <p className="text-slate-600 dark:text-slate-400">Sign in to continue your learning journey</p>
           </div>
 
@@ -129,7 +129,7 @@ const Login = () => {
           <div className="mt-6 text-center text-sm text-slate-600 dark:text-slate-400">
             Don't have an account?{' '}
             <Link to="/register" className="text-blue-600 hover:underline dark:text-blue-400">
-              Sign up
+              Sign up for Study Portal
             </Link>
           </div>
         </div>
