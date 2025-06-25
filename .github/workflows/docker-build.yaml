@@ -14,7 +14,6 @@ jobs:
         with:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          image-name: sirsam10/law-learn-app
           registry: docker.io
       -
         name: Set up QEMU
